@@ -44,7 +44,7 @@ function FileComponent() {
     element.click();
     document.body.removeChild(element);
   };
-  if (isAuthenticated)
+  if (isAuthenticated) {
     return (
       <div className="mt-[5rem]">
         {isAuthenticated && fileData != null ? (
@@ -72,7 +72,7 @@ function FileComponent() {
                       ? currentFile?.data?.name.slice(0, 40) +
                         '...' +
                         currentFile?.data?.extension
-                      : currentFile.name}
+                      : currentFile?.data?.name}
                   </p>
                   <div className="flex items-center z-10 w-[20%] border-white border-2">
                     <button
@@ -111,6 +111,7 @@ function FileComponent() {
         )}
       </div>
     );
+  }
   return <div>Login first</div>;
 }
 
