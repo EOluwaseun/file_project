@@ -25,7 +25,8 @@ function FileComponent() {
     if (!isAuthenticated) {
       navigate('/login');
     }
-  });
+  }, [isAuthenticated, navigate]);
+
   useEffect(() => {
     if (currentFile) {
       setFileData(currentFile?.data?.data);
